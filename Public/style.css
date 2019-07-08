@@ -1,0 +1,25 @@
+header {
+	text-align: center;
+}
+table, th, td {
+  border: 1px solid black;
+	text-align: center;
+}
+
+td{
+	min-width: 100px;
+}
+
+th {
+	color: red;
+}
+
+button {
+	margin-top: 10px;
+}
+
+.courseAdd, .classAdd, .courseSub{
+	margin-top: 10px;
+	display: none;
+}
+
