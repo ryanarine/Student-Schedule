@@ -3,7 +3,7 @@ This application displays a weekly schedule with hourly timeslots from Monday to
 
 This application currently runs on localhost port 3000. You also need to have jquery and Node.js with the following modules installed: express, body-parser, and sqlite3.
 
-To Run:
+## Install
 1) Download and unzip
 2) Open Command Prompt and navigate to the unzipped folder
 3) Type 'node server' and hit enter
