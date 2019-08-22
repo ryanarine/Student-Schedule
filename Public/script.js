@@ -81,7 +81,12 @@ function showCourse(course) {
 
 function setHighlightInterval(){
 	highlightCurrentSlot();
+	setTimeout(setupHighlightInterval, ((60 - new Date().getSeconds()) % 60) * 1000);
+}
+
+function setupHighlightInterval(){
 	setInterval(highlightCurrentSlot, 60 * 1000);
+	highlightCurrentSlot();
 }
 
 
@@ -90,7 +95,16 @@ function highlightCurrentSlot(){
 	var day = date.getDay();
 	var hour = date.getHours();
 	if (day > 0 && day < 6){
-		document.getElementById("timeslot" + hour).children[day].style.backgroundColor = "red";
+		var cslot = document.getElementById("timeslot" + hour).children[day];
+		if (cslot.style.backgroundColor !== "red"){
+			cslot.style.backgroundColor = "red";
+			if (hour === 0 && day > 1){
+				document.getElementById("timeslot23").children[day - 1].style.backgroundColor = "white";
+			}
+			else {
+				document.getElementById("timeslot" + (hour - 1)).children[day].style.backgroundColor = "white";
+			}
+		}
 	}
 }
 
